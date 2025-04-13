@@ -6,6 +6,15 @@ from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 from datetime import datetime
 from apscheduler.schedulers.background import BackgroundScheduler
 
+CREATE TABLE users (
+  chat_id BIGINT PRIMARY KEY,
+  name TEXT,
+  emoji TEXT,
+  karma INT,
+  muting BOOLEAN,
+  role TEXT
+);
+
 # ENV
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
